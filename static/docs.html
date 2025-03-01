@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArtisticAI - Docs</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #444;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .section {
+        margin-bottom: 30px;
+      }
+      .section h2 {
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+      }
+      .analogy {
+        background: #f1f1f1;
+        padding: 10px;
+        border-left: 4px solid #007bff;
+        margin: 10px 0;
+      }
+      .analogy p {
+        margin: 0;
+      }
+      .highlight {
+        color: #007bff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1>ArtisticAI</h1>
+        <p class="tagline">
+          Transform your photos into masterpieces with neural style transfer
+        </p>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>How ArtisticAI Works</h1>
+
+      <div class="section">
+        <h2>1. What the App Does</h2>
+        <p>
+          ArtisticAI allows you to upload a photo and apply artistic styles to
+          it, transforming it into something that looks like it was painted by
+          famous artists like Van Gogh, Picasso, or Monet. You can also email
+          your stylized images to yourself or others.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>2. Key Technologies Used</h2>
+        <p>
+          The app uses a combination of web development, machine learning, and
+          email services to achieve its functionality. Here's a breakdown:
+        </p>
+
+        <h3>a. Web Development (Flask)</h3>
+        <p>
+          Flask is a lightweight framework used to build the app's website. It
+          handles user interactions, like uploading photos, selecting styles,
+          and sending emails.
+        </p>
+        <div class="analogy">
+          <p>
+            <strong>Analogy:</strong> Think of Flask as the "backstage crew" of
+            a theater production. It manages everything behind the scenes to
+            make sure the app runs smoothly.
+          </p>
+        </div>
+
+        <h3>b. Machine Learning (TensorFlow and TensorFlow Hub)</h3>
+        <p>
+          The app uses a pre-trained machine learning model called
+          <span class="highlight">Arbitrary Image Stylization</span> to apply
+          artistic styles to user-uploaded photos. The model is hosted on
+          TensorFlow Hub, a library of reusable machine learning models.
+        </p>
+        <p>The model takes two inputs:</p>
+        <ul>
+          <li>The user's photo (content image).</li>
+          <li>A preloaded style image (e.g., Van Gogh's painting).</li>
+        </ul>
+        <p>
+          It then combines the content of the user's photo with the artistic
+          style of the chosen painting.
+        </p>
+        <div class="analogy">
+          <p>
+            <strong>Analogy:</strong> Imagine you have a coloring book (your
+            photo) and a set of crayons (the style image). The machine learning
+            model is like an artist who uses the crayons to color your photo in
+            the style of Van Gogh or Picasso.
+          </p>
+        </div>
+
+        <h3>c. Image Processing (TensorFlow and PIL)</h3>
+        <p>
+          Before applying the style, the app resizes and normalizes the user's
+          photo to make it compatible with the machine learning model. After the
+          style is applied, the app converts the result back into a format that
+          can be displayed or emailed.
+        </p>
+        <div class="analogy">
+          <p>
+            <strong>Analogy:</strong> This is like resizing a photo to fit into
+            a frame and then adjusting the brightness and contrast to make it
+            look perfect.
+          </p>
+        </div>
+
+        <h3>d. Email Service (smtplib and MIME)</h3>
+        <p>
+          The app allows users to email their stylized images. It uses Python's
+          <span class="highlight">smtplib</span> library to send emails and
+          <span class="highlight">MIME</span> to attach the image to the email.
+        </p>
+        <div class="analogy">
+          <p>
+            <strong>Analogy:</strong> Think of this as a digital postman who
+            takes your stylized photo, puts it in an envelope (email), and
+            delivers it to your inbox.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. How It All Works Together</h2>
+        <ol>
+          <li>
+            <strong>User Interaction:</strong> The user uploads a photo and
+            selects a style (e.g., Van Gogh).
+          </li>
+          <li>
+            <strong>Image Processing:</strong> The app resizes and prepares the
+            photo for the machine learning model.
+          </li>
+          <li>
+            <strong>Style Transfer:</strong> The machine learning model applies
+            the selected style to the photo.
+          </li>
+          <li>
+            <strong>Result Display:</strong> The app shows the stylized photo to
+            the user.
+          </li>
+          <li>
+            <strong>Email Option:</strong> The user can email the stylized photo
+            to themselves or others.
+          </li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>4. Why It’s Cool</h2>
+        <ul>
+          <li>
+            <strong>Artistic Creativity:</strong> The app lets anyone create
+            unique, artistic versions of their photos without needing any
+            artistic skills.
+          </li>
+          <li>
+            <strong>AI-Powered:</strong> The use of machine learning makes the
+            process fast and accurate, producing high-quality results.
+          </li>
+          <li>
+            <strong>User-Friendly:</strong> The app is easy to use, with a
+            simple interface and the ability to email results directly.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>5. Example Scenario</h2>
+        <p>
+          Imagine you take a photo of your dog. With this app, you can transform
+          it into a Van Gogh-style painting, making it look like a masterpiece.
+          You can then email it to your friends to show off your dog's artistic
+          side!
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>6. Technical Terms Simplified</h2>
+        <ul>
+          <li>
+            <strong>Machine Learning:</strong> A type of computer program that
+            learns from data to perform tasks (like applying artistic styles).
+          </li>
+          <li>
+            <strong>TensorFlow:</strong> A tool for building and using machine
+            learning models.
+          </li>
+          <li>
+            <strong>Style Transfer:</strong> A technique that combines the
+            content of one image with the style of another.
+          </li>
+          <li>
+            <strong>Base64 Encoding:</strong> A way to convert images into text
+            so they can be sent over the internet.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About ArtisticAI</h3>
+          <p>
+            ArtisticAI is a cutting-edge neural style transfer application that
+            transforms your ordinary photos into extraordinary art in the style
+            of famous painters.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/how_it_works">How It Works</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: kavinsde@yahoo.com</p>
+          <p>Phone: +91 88257 48664</p>
+          <div class="social-links">
+            <a href="https://github.com/kavinsde" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://linkedin.com/in/kavinsde" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://twitter.com/kavinsde" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://www.instagram.com/kavinsde" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>
+            Nehru Memorial College <br /><small
+              >Puthanampatti, Tiruchirappalli - 621 007</small
+            >
+          </h3>
+          <p>
+            This project is part of the <strong>AI ERA 2K25</strong> exhibition
+            showcasing the latest innovations in artificial intelligence and
+            creative technology.
+          </p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          © 2025 ArtisticAI | Neural Style Transfer | Tech Exhibition AI ERA
+          2K25
+        </p>
+        <p>
+          Developed by Kavin |
+          <a href="https://github.com/kavinsde" target="_blank"
+            >GitHub @kavinsde</a
+          >
+          |
+          <a href="https://linkedin.com/in/kavinsde" target="_blank"
+            >LinkedIn @kavinsde</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </body>
+</html>

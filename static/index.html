@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic AI - Neural Style Transfer</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="exhibition-banner">AI ERA 2K25</div>
+    
+    <header>
+        <div class="header-content">
+            <h1>ArtisticAI</h1>
+            <p class="tagline">Transform your photos into masterpieces with neural style transfer</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="app-grid">
+            <div class="card glow-container">
+                <div class="glow-effect"></div>
+                <h2 class="card-title">Capture Your Image</h2>
+                
+                <div class="video-container">
+                    <div class="image-container-title">Live Camera</div>
+                    <video id="webcam" width="320" height="240" autoplay></video>
+                </div>
+                <canvas id="canvas" width="320" height="240"></canvas>
+                
+                <button onclick="capture()">
+                    <i class="fas fa-camera"></i> Capture Photo
+                </button>
+                
+                <div class="preview-container">
+                    <div class="image-container-title">Your Photo</div>
+                    <img id="preview" alt="Captured photo preview" class="artwork-frame" src="/static/images/avatar.jpg">
+                </div>
+            </div>
+            
+            <div class="card glow-container">
+                <div class="glow-effect"></div>
+                <h2 class="card-title">Transform Your Photo</h2>
+                
+                <div class="section-title">Select an Artistic Style</div>
+                <div class="style-options">
+                    <div class="style-option">
+                        <input type="radio" name="theme" id="van_gogh" value="van_gogh">
+                        <label for="van_gogh">
+                            <img src="/static/styles/van_gogh_thumb.jpg" alt="Van Gogh">
+                        </label>
+                        <span>Van Gogh</span>
+                        <div class="artist-description">Starry Night</div>
+                    </div>
+                    
+                    <div class="style-option">
+                        <input type="radio" name="theme" id="picasso" value="picasso">
+                        <label for="picasso">
+                            <img src="/static/styles/picasso_thumb.jpg" alt="Picasso">
+                        </label>
+                        <span>Picasso</span>
+                        <div class="artist-description">Cubism</div>
+                    </div>
+                    
+                    <div class="style-option">
+                        <!-- <div class="badge">NEW</div> -->
+                        <input type="radio" name="theme" id="monet" value="monet">
+                        <label for="monet">
+                            <img src="/static/styles/monet_thumb.jpg" alt="Monet">
+                        </label>
+                        <span>Monet</span>
+                        <div class="artist-description">Impressionism</div>
+                    </div>
+                    
+                    <div class="style-option">
+                        <input type="radio" name="theme" id="pedro_paricio" value="pedro_paricio">
+                        <label for="pedro_paricio">
+                            <img src="/static/styles/pedro_paricio_thumb.jpg" alt="Pedro Paricio">
+                        </label>
+                        <span>Pedro Paricio</span>
+                        <div class="artist-description">Dreamscape</div>
+                    </div>
+
+                </div>
+                
+                <button onclick="submitImage()">
+                    Transform Image
+                </button>
+                
+                <div class="result-container">
+                    <div class="image-container-title">Artistic Result</div>
+                    <img id="result" alt="Stylized result" class="artwork-frame" src="/static/images/output.jpg">
+                    <div class="loading" id="loading">
+                        <div class="loading-spinner"></div>
+                        <p>Creating your masterpiece...</p>
+                    </div>
+                </div>
+
+                <div class="email-share-container">
+                    <div class="email-input-group">
+                        <input type="email" id="email-address" placeholder="Enter email address">
+                        <button onclick="sendEmail()">
+                            <i class="fas fa-envelope"></i> Send to Email
+                        </button>
+                    </div>
+                    <div id="email-status" class="email-status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About ArtisticAI</h3>
+                <p>ArtisticAI is a cutting-edge neural style transfer application that transforms your ordinary photos into extraordinary art in the style of famous painters.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/how_it_works">How It Works</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: kavinsde@yahoo.com</p>
+                <p>Phone: +91 88257 48664</p>
+                <div class="social-links">
+                    <a href="https://github.com/kavinsde" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/kavinsde" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/kavinsde" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kavinsde" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Nehru Memorial College <br><small>Puthanampatti, Tiruchirappalli - 621 007</small></h3>
+                <p>This project is part of the <strong>AI ERA 2K25</strong> exhibition showcasing the latest innovations in artificial intelligence and creative technology.</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 ArtisticAI | Neural Style Transfer | Tech Exhibition AI ERA 2K25</p>
+            <p>Developed by Kavin | <a href="https://github.com/kavinsde" target="_blank">GitHub @kavinsde</a> | <a href="https://linkedin.com/in/kavinsde" target="_blank">LinkedIn @kavinsde</a></p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="static/script.js"></script>
+</body>
+</html>
